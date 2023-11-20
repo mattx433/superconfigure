@@ -41,15 +41,12 @@ mkdir -p "$RESULTS"
 # the zip folder
 cd "$CONFIGDIR"
 mkdir -p share
-cp -r /zip/x86_64 ./
-cp -r /zip/aarch64 ./
-cp -r /zip/share/terminfo ./share
-cp -r /zip/share/vim ./share
-cp -r /zip/share/nano ./share
-cp -r /zip/share/emacs ./share
+cp -r $BASELOC/editor/emacs-28.2/emacs-28.2/destdir/zip/x86_64 ./
+cp -r $BASELOC/editor/emacs-28.2/emacs-28.2/destdir/zip/aarch64 ./
+cp -r $BASELOC/lib/ncurses-6.4/ncurses-6.4/destdir/zip/share/terminfo ./share
+cp -r $BASELOC/editor/emacs-28.2/emacs-28.2/destdir/zip/share/emacs ./share
 mkdir -p ./share/ssl/certs/
 cp /etc/ssl/certs/*.* ./share/ssl/certs/ || true
-ls -al /zip
 
 
 cd $BASELOC
@@ -72,17 +69,17 @@ for e in emacs emacsclient; do
 done
 
 # vim
-cd "$BASELOC"
-apelinkpls $RESULTS/bin/vim.com $COSMOS_X86/bin/vim $COSMOS_AARCH64/bin/vim
-cd "$CONFIGDIR"
-zip -r $RESULTS/bin/vim.com \
-    share/terminfo \
-    share/vim
+#cd "$BASELOC"
+#apelinkpls $RESULTS/bin/vim.com $COSMOS_X86/bin/vim $COSMOS_AARCH64/bin/vim
+#cd "$CONFIGDIR"
+#zip -r $RESULTS/bin/vim.com \
+#    share/terminfo \
+#    share/vim
 
 # nano
-cd "$BASELOC"
-apelinkpls $RESULTS/bin/nano.com $COSMOS_X86/bin/nano $COSMOS_AARCH64/bin/nano
-cd "$CONFIGDIR"
-zip -r $RESULTS/bin/nano.com \
-    share/terminfo\
-    share/nano
+#cd "$BASELOC"
+#apelinkpls $RESULTS/bin/nano.com $COSMOS_X86/bin/nano $COSMOS_AARCH64/bin/nano
+#cd "$CONFIGDIR"
+#zip -r $RESULTS/bin/nano.com \
+#    share/terminfo\
+#    share/nano

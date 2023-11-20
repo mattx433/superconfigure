@@ -57,9 +57,7 @@ editor/emacs-28.2.built.$(ARCH): lib/ncurses-6.4.built.$(ARCH) lib/gnutls-3.7.10
 editor/vim-9.0.1670.built.$(ARCH): lib/ncurses-6.4.built.$(ARCH) lib/readline-8.2.built.$(ARCH)
 editor/nano-7.2.built.$(ARCH): lib/ncurses-6.4.built.$(ARCH) lib/readline-8.2.built.$(ARCH)
 
-editor: editor/nano-7.2.built.$(ARCH)\
-	editor/emacs-28.2.built.$(ARCH)\
-	editor/vim-9.0.1670.built.$(ARCH)
+editor: editor/emacs-28.2.built.$(ARCH)
 
 # compress
 
